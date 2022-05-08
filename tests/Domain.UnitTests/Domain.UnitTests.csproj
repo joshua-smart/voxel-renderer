@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>VoxelRenderer.Domain.UnitTests</RootNamespace>
+    <AssemblyName>VoxelRenderer.Domain.UnitTests</AssemblyName>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Domain/Domain.csproj" />
+  </ItemGroup>
+
+</Project>
