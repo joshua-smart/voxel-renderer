@@ -1,5 +1,5 @@
 namespace VoxelRenderer.Domain.Interfaces;
 
-interface ICamera {
+public interface ICamera {
     public IImage Render(IScene scene);
 }

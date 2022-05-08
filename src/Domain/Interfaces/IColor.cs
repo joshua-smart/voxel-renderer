@@ -1,3 +1,3 @@
 namespace VoxelRenderer.Domain.Interfaces;
 
-interface IColor {}
+public interface IColor {}
