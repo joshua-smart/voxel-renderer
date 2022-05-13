@@ -2,6 +2,6 @@ using VoxelRenderer.Domain.Interfaces;
 
 namespace VoxelRenderer.Application.Interfaces;
 
-interface ISceneLoader {
-    public IScene Load();
+public interface IImageWriter {
+    public void Write(IImage image);
 }
