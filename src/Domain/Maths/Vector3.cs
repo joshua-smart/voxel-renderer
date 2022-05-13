@@ -1,8 +1,6 @@
-using System.Diagnostics.CodeAnalysis;
-
 namespace VoxelRenderer.Domain.Maths;
 
-public struct Vector3 {
+public struct Vector3 : System.IEquatable<Vector3> {
 
     public readonly double X, Y, Z;
 
@@ -25,29 +23,19 @@ public struct Vector3 {
 
     // Vector3 to string for printing and debug purposes
     public static string ToString(Vector3 a) { return $"({a.X}, {a.Y}, {a.Z}"; }
+    public override string ToString() {
+        return ToString(this);
+    }
 
     // Return Vector3 with unit length an invariant direction
-    public static Vector3 Normalise(Vector3 a) { return a * (1 / Magnitude(a)); }
-    public Vector3 Normalise() { return Normalise(this); }
+    public Vector3 Normalised => Normalise(this);
+    public static Vector3 Normalise(Vector3 a) { return a * (1 / a.Magnitude); }
 
-    public static double SquareMagnitude(Vector3 a) { return a.X * a.X + a.Y * a.Y + a.Z * a.Z; }
-    public double SquareMagnitude() { return SquareMagnitude(this); }
+    public double SquareMagnitude => X * X + Y * Y + Z * Z;
 
-    public static double Magnitude(Vector3 a) { return Math.Sqrt(SquareMagnitude(a)); }
-    public double Magnitude() { return Magnitude(this); }
+    public double Magnitude => Math.Sqrt(SquareMagnitude);
 
-    public override int GetHashCode() {
-        return ((byte) X) ^ ((byte) Y) ^ ((byte) Z);
-    }
-    public override bool Equals([NotNullWhen(true)] object? obj) {
-        if (obj == null) return false;
-        Vector3 a = (Vector3) obj;
-        return this == a;
-    }
-    public static Boolean operator ==(Vector3 a, Vector3 b) {
-        return a.X == b.X && a.Y == b.Y && a.Z == b.Z;
-    }
-    public static Boolean operator !=(Vector3 a, Vector3 b) {
-        return !(a == b);
+    public bool Equals(Vector3 a) {
+        return a.X == X && a.Y == Y && a.Z == Z;
     }
 }
