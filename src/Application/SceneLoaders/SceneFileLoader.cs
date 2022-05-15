@@ -1,8 +1,9 @@
 using VoxelRenderer.Domain.Interfaces;
+using VoxelRenderer.Application.Interfaces;
 
-namespace VoxelRenderer.Application.Loaders;
+namespace VoxelRenderer.Application.SceneLoaders;
 
-public class SceneFileLoader : IScenceLoader {
+public class SceneFileLoader : ISceneLoader {
 
     private readonly IFileLoader FileLoader;
     private readonly string FilePath;
@@ -13,6 +14,7 @@ public class SceneFileLoader : IScenceLoader {
     }
 
     public IScene Load() {
+        string fileContents = FileLoader.Load(FilePath);
         return null;
     }
 }
