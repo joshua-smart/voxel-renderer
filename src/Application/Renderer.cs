@@ -3,7 +3,7 @@ using VoxelRenderer.Application.Interfaces;
 
 namespace VoxelRenderer.Application;
 
-class Renderer {
+public class Renderer {
 
     private readonly ISceneLoader SceneLoader;
     private readonly IImageWriter ImageWriter;
