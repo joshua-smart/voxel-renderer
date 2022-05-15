@@ -2,7 +2,7 @@ using VoxelRenderer.Domain.Interfaces;
 
 namespace VoxelRenderer.Application.Cameras;
 
-class PerspectiveCamera : ICamera {
+public class PerspectiveCamera : ICamera {
 
     private double Fov;
 
