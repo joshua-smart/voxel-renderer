@@ -1,7 +1,6 @@
 using VoxelRenderer.Domain.Interfaces;
-using VoxelRenderer.Application.DataStructures;
 
-namespace VoxelRenderer.Application.Image;
+namespace VoxelRenderer.Application.DataStructures;
 
 public class Image : IImage {
 
@@ -14,6 +13,9 @@ public class Image : IImage {
         Height = height;
         Pixels = new byte[width * height * 4];
     }
+
+    public int GetWidth() { return Width; }
+    public int GetHeight() { return Height; }
 
     private int GetIndex(int x, int y, int i) {
         return y * Width * 4 + x * 4 + i;
