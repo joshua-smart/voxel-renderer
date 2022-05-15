@@ -1,5 +1,5 @@
 namespace VoxelRenderer.Application.Interfaces;
 
-public interface IFileLoader<T> {
-    public T LoadFile(string filePath);
+public interface IFileLoader {
+    public string Load(string filePath);
 }
